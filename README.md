@@ -1,88 +1,88 @@
-## > git init
+### > git init
 * создание директории .git, слежение за изменением файлов
 ---
-## > git add .
+### > git add .
 * добавление в индекс всех файлов в текущей директории директории и поддиректории
 
-## > git add -A
+### > git add -A
 * добавление в индекс всех файлов от корня проекта
 ---
-## > git commit
+### > git commit
 * добавление файлов из индекса в репозиторий с предварительным вызовом редактора для коментария изменений
 
-## > git commit -m "comment"
+### > git commit -m "comment"
 * добавление файлов из индекса в репозиторий без вызова редактора, но с маленьким коментом
 
-## > git commit -a
+### > git commit -a
 * добавление файлов из рабочей области в индекс и в репозирий (только файлов которые ранее были в индексе)
 
-## > git commit -am "comment"
+### > git commit -am "comment"
 * добавление файлов из рабочей области в индекс и в репозирий с коментом (только файлов которые ранее были в индексе)
 ---
-## > git rm <file_name## >
+### > git rm <file_name### >
 * удаление файла из рабочей области
 
-## > git rm --сached <file_name## >
+### > git rm --сached <file_name### >
 * удаление файла из индекса
 
-## > git rm -r <dir_name## >
+### > git rm -r <dir_name### >
 * удаление директории из рабочей области
 
-## > git rm -r --сached <dir_name## >
+### > git rm -r --сached <dir_name### >
 * удаление директории из индекса
 ---
-## > git mv <file_name## > <file_name_2## >
+### > git mv <file_name### > <file_name_2### >
 * переименование файлов
 ---
-## > git restore --staged <file_name## >
+### > git restore --staged <file_name### >
 * вынесение из индекса ещё не закомиченых файлов
 ---
-## > git branch
+### > git branch
 * показывает какие есть ветки
 
-## > git branch -v
+### > git branch -v
 * показывает какие есть ветки с дополнительной информацией
 
-## > git branch <name_new_branch## >
+### > git branch <name_new_branch### >
 * создание новой ветки с именем
 
-## > git branch <name_branch## > <number_commit## >
+### > git branch <name_branch### > <number_commit### >
 * создаст ветку с указанным комитом
 
-## > git branch -f <name_branch## > <number_commit## >
+### > git branch -f <name_branch### > <number_commit### >
 * перенесёт ветку на указанный комит или ветку так как ветка это просто ссылка на коммит
 ---
-## > git checkout <name_branch/number_commit## >
+### > git checkout <name_branch/number_commit### >
 * переключение на другую ветку или коммит
 
-## > git checkout -b <name_branch## >
+### > git checkout -b <name_branch### >
 * создание новой ветки и переключение на неё
 
-## > git checkout -B <name_branch## > <number_commit## >
+### > git checkout -B <name_branch### > <number_commit### >
 * перенос ссылки ветки на новую ссылку комита и переключение за эту ветку
 
-## > git checkout -f <name_branch## >
+### > git checkout -f <name_branch### >
 * переключение на другую ветку, потеря не закомиченных изменений
 
-## > git checkout -f HEAD
+### > git checkout -f HEAD
 * переключение на текущую ветку при этом все незакомиченные изменения пропадут. (можно без указания HEAD, он идёт по умолчанию)
 
-## > git checkout <name_branch## > <name_file## >
+### > git checkout <name_branch### > <name_file### >
 * откатывает файл. при этом добавляет в индекс для нового коммита
 
-## > git checkout <path## >
+### > git checkout <path### >
 * откатывает изменения из индекса в рабочую директорию
 
-## > git checkout HEAD <path## >
+### > git checkout HEAD <path### >
 * откатывает изменения из репозитория и индекса в рабочую директорию
 
-## > git checkout -- <path## >
+### > git checkout -- <path### >
 * всё что после 2 дифиса воспринимается как путь. 2 дифис нужен когда ситуация неопределённая. например ветка и папка имеют одно имя
 ---
-## > git stash
+### > git stash
 * архивируем не закомиченные изменения
 
-## > git stash pop
+### > git stash pop
 * возырвщвем архивируемые изменения
 
 ---

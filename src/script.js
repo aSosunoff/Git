@@ -1,3 +1,0 @@
-function sayWelcome(){
-    alert('Привет');
-}

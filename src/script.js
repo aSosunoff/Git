@@ -1,3 +1,3 @@
-function sayHello(){
+function sayWelcome(){
     alert('Привет');
 }

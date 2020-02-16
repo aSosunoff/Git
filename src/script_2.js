@@ -1,0 +1,3 @@
+function say(){
+    alert('Привет');
+}

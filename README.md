@@ -210,7 +210,30 @@
 * `--pretty=format:'%C(yellow)%h %C(blue)%cd %C(reset)| %C(yellow)%s%C(green)%d %C(blue)[%an - %ae]' --date=format:'%d.%m.%Y %H:%M:%S'`
 
 > кастомный формат вывода логов. больше в `git help log`
+
 > формат дат не чать `git`. формат используется в функции `strfdate`. [можно посмотреть по ссылке](https://www.php.net/manual/ru/function.strftime.php)
+
+`-p`
+
+> вывод логов с тем что было сделано
+
+`{commit} {commit} --graph`
+
+> красиво отображает дерево
+
+* `{commit1} ^{commit2}`
+* `{commit2}..{commit1}`
+* `HEAD..{commit1}`
+
+> кареткой убираем вывод коммитов 2.
+
+`{path}`
+
+> вывод где учавствовал только этот файл
+
+`--follow`
+
+> наёдёт так же предыдущее имя файла
 
 ---
 

@@ -188,7 +188,29 @@
 
 `--oneline -g`
 
-> переключает log в особое отображение рефлогов
+> переключает log в особое отображение рефлогов тоже самое что и `git reflog`
+
+`--pretty=oneline`
+
+> форматирование логов. вводит полный номер коммита
+
+`--pretty=oneline --abbrev-commit`
+
+> форматирование логов. вводит короткий номер коммита. тоже самое что и `git log --oneline`
+
+`--no-decorate`
+
+> вывод без ссылок на ветки
+
+* `--pretty=format:'%h %ch | %s%d [%an]'`
+* `--pretty=format:'%h %ch | %s%d [%an - %ae]'`
+* `--pretty=format:'%h %cd | %s%d [%an - %ae]' --date=short`
+* `--pretty=format:'%h %cd | %s%d [%an - %ae]' --date=format:'%F %R'`
+* `--pretty=format:'%h %cd | %s%d [%an - %ae]' --date=format:'%d.%m.%Y %H:%M:%S'`
+* `--pretty=format:'%C(yellow)%h %C(blue)%cd %C(reset)| %C(yellow)%s%C(green)%d %C(blue)[%an - %ae]' --date=format:'%d.%m.%Y %H:%M:%S'`
+
+> кастомный формат вывода логов. больше в `git help log`
+> формат дат не чать `git`. формат используется в функции `strfdate`. [можно посмотреть по ссылке](https://www.php.net/manual/ru/function.strftime.php)
 
 ---
 
@@ -244,7 +266,7 @@
 
 `{name_branch/commit}`
 
-> слияние веток перемоткой
+> слияние веток перемоткой. по одной ветке
 
 ---
 
@@ -340,10 +362,16 @@ working directory | index | current branch | type
 
 ## diff - _сравнение веток / коммитов_
 
+```
+по умолчанию git считает словом любую последовательность символов без пробелов. но драйвер сравнения можно поменять. напрмер в файле `.gitattributes` прописать `*.html diff=html`. который скажет git, что для всех файлов `html` применять встроенный друйвер `html`. командой `git help attributes` по слову `html` можно найти какие драйвера для слов поддерживает git
+```
+
+[файл самого git который предоставляет драйверы](https://github.com/git/git/blob/master/userdiff.c)
+
 > сравнивает рабочую директорию с индексом. если в рабочей что то поменяли тогда покажутся новейшие изменения
 
-`{branch/commit} {branch/commit}`
-`{branch/commit}..{branch/commit}`
+* `{branch/commit} {branch/commit}`
+* `{branch/commit}..{branch/commit}`
 
 > сравнение веток или комитов
 
@@ -363,8 +391,8 @@ working directory | index | current branch | type
 
 > сравнит репозиторий с рабочей директорией
 
-`--chached`
-`--staged`
+* `--chached`
+* `--staged`
 
 > сравнит репозиторий с индектом. с изменениями которые в индексе но не закомичены
 
@@ -379,3 +407,11 @@ working directory | index | current branch | type
 `{commit1}:{path1} {commit2}:{path2}`
 
 > сравнивает первый комит и файл со вторым комитом и файлом
+
+`--word-diff`
+
+> вывод различий по словам
+
+`--color-words`
+
+> вывод различий по словам только цветом
